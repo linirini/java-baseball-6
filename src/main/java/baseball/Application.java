@@ -16,8 +16,12 @@ public class Application {
         /*NumberGenerator generator = new NumberGenerator();
         List<Integer>numbers = generator.createRandomNumber();
         System.out.println(numbers);*/
+
         Judgement judgement = new Judgement();
-        int count = judgement.correctCount(Arrays.asList(1,2,3),Arrays.asList(1,2,3));
-        System.out.println(count);
+        /*int count = judgement.correctCount(Arrays.asList(1,2,3),Arrays.asList(1,2,3));
+        System.out.println(count);*/
+
+        boolean place = judgement.hasPlace(Arrays.asList(1,2,3),0,1);
+        System.out.println(place);
     }
 }
