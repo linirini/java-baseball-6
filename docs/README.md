@@ -22,6 +22,6 @@
 - [ ] 3개 숫자를 모두 맞힐 경우 게임 종료 - GameManager#endGame
   - [x] "3개의 숫자를 모두 맞히셨습니다! 게임 종료" 출력 - OutputView#printGameOverNotice
 - [ ] 게임 재시작 여부 판단
-  - [ ] "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요." - InputView#inputGameRestart
+  - [x] "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요." - InputView#inputGameRestart
   - [ ] 입력값이 1이면 재시작, 2면 종료 - GameManager#isRestart
     - [ ] 입력값이 1 또는 2가 아닌 경우 GameManager#throwIfInvalidRestartInput
