@@ -9,15 +9,15 @@ public class RandomNumbersGenerator {
     private static final int START_NUMBER = 1;
     private static final int END_NUMBER = 9;
 
-    public Numbers createRandomNumbers() {
-        List<Integer> computerNumbers = new ArrayList<>();
-        while (computerNumbers.size() < 3) {
+    public List<Integer> createRandomNumbers() {
+        List<Integer> numbers = new ArrayList<>();
+        while (numbers.size() < 3) {
             int randomNumber = Randoms.pickNumberInRange(START_NUMBER, END_NUMBER);
-            if (!computerNumbers.contains(randomNumber)) {
-                computerNumbers.add(randomNumber);
+            if (!numbers.contains(randomNumber)) {
+                numbers.add(randomNumber);
             }
         }
-        return new Numbers(computerNumbers);
+        return numbers;
     }
 
 }
