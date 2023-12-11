@@ -1,5 +1,6 @@
 package baseball.controller;
 
+import static baseball.util.ExceptionEnum.INVALID_RESTART_OPTION;
 import static baseball.util.ExceptionEnum.NOT_NUMBER;
 
 import baseball.domain.GameResult;
@@ -71,7 +72,7 @@ public class GameManager {
 
     private void throwIfInvalidRestartInput(String restartInput) {
         if(!(restartInput.equals("1")||restartInput.equals("2"))){
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(INVALID_RESTART_OPTION.getMessage());
         }
     }
 
