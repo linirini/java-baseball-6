@@ -66,11 +66,11 @@ public class GameManager {
 
     public boolean isRestart() {
         String restartInput = inputView.inputGameRestart();
-        throwIfInvalidRestartInput(restartInput);
+        throwIfInvalidRestartOption(restartInput);
         return restartInput.equals("1");
     }
 
-    private void throwIfInvalidRestartInput(String restartInput) {
+    private void throwIfInvalidRestartOption(String restartInput) {
         if(!(restartInput.equals("1")||restartInput.equals("2"))){
             throw new IllegalArgumentException(INVALID_RESTART_OPTION.getMessage());
         }
