@@ -45,4 +45,16 @@ public class NumbersTest {
         assertThat(numbers.countSameNumbers(new Numbers(List.of(4, 5, 6)))).isEqualTo(0);
     }
 
+    @DisplayName("같은 숫자이면서 같은 위치에 있는 숫자의 개수를 반환한다")
+    @Test
+    void count_same_numbers_on_same_position() {
+        Numbers numbers = new Numbers(List.of(1, 2, 3));
+        assertThat(numbers.countSameNumberOnSamePosition(new Numbers(List.of(3, 2, 1)))).isEqualTo(
+                1);
+        assertThat(numbers.countSameNumberOnSamePosition(new Numbers(List.of(1, 2, 9)))).isEqualTo(
+                2);
+        assertThat(numbers.countSameNumberOnSamePosition(new Numbers(List.of(4, 5, 6)))).isEqualTo(
+                0);
+    }
+
 }
