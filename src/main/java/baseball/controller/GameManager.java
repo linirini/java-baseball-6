@@ -26,6 +26,9 @@ public class GameManager {
                 Numbers playerNumbers = inputPlayerNumbers();
                 GameResult gameResult = referee.determineGameResult(computerNumbers,playerNumbers);
                 outputView.printGameResult(gameResult);
+                if(gameResult.isAllStrike()){
+                    break;
+                }
             }
             endGame();
         }
@@ -57,7 +60,7 @@ public class GameManager {
     }
 
     public void endGame() {
-
+        outputView.printGameOverNotice();
     }
 
     public boolean isRestart() {
