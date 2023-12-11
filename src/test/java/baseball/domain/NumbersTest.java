@@ -1,5 +1,6 @@
 package baseball.domain;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatNoException;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
@@ -33,6 +34,15 @@ public class NumbersTest {
     void invalid_numbers_range_exception() {
         assertThatThrownBy(() -> new Numbers(List.of(0, 1, 2))).isInstanceOf(
                 IllegalArgumentException.class);
+    }
+
+    @DisplayName("같은 숫자의 개수를 반환한다")
+    @Test
+    void count_same_numbers() {
+        Numbers numbers = new Numbers(List.of(1, 2, 3));
+        assertThat(numbers.countSameNumbers(new Numbers(List.of(3, 2, 1)))).isEqualTo(3);
+        assertThat(numbers.countSameNumbers(new Numbers(List.of(9, 4, 1)))).isEqualTo(1);
+        assertThat(numbers.countSameNumbers(new Numbers(List.of(4, 5, 6)))).isEqualTo(0);
     }
 
 }
