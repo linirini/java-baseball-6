@@ -2,6 +2,7 @@ package baseball.domain;
 
 public class GameResult {
 
+    private static final int MAX_COUNT = 3;
     private final int ball;
     private final int strike;
 
@@ -18,12 +19,12 @@ public class GameResult {
         return strike;
     }
 
-    public boolean isNothing(){
+    public boolean isNothing() {
         return ball == 0 && strike == 0;
     }
 
-    public boolean isAllStrike(){
-        return false;
+    public boolean isAllStrike() {
+        return strike == MAX_COUNT;
     }
 
 }
