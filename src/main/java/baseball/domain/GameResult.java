@@ -18,6 +18,10 @@ public class GameResult {
         return strike;
     }
 
+    public boolean isNothing(){
+        return ball == 0 && strike == 0;
+    }
+
     public boolean isAllStrike(){
         return false;
     }
