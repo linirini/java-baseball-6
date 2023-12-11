@@ -64,7 +64,8 @@ public class GameManager {
     }
 
     public boolean isRestart() {
-        return false;
+        String restartInput = inputView.inputGameRestart();
+        return restartInput.equals("1");
     }
 
 }
