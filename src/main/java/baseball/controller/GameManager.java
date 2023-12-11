@@ -14,6 +14,8 @@ import java.util.List;
 
 public class GameManager {
 
+    private static final String RESTART = "1";
+    private static final String TERMINATE = "2";
     private final InputView inputView = new InputView();
     private final OutputView outputView = new OutputView();
     private final RandomNumbersGenerator numbersGenerator = new RandomNumbersGenerator();
@@ -67,11 +69,11 @@ public class GameManager {
     public boolean isRestart() {
         String restartInput = inputView.inputGameRestart();
         throwIfInvalidRestartOption(restartInput);
-        return restartInput.equals("1");
+        return restartInput.equals(RESTART);
     }
 
     private void throwIfInvalidRestartOption(String restartInput) {
-        if(!(restartInput.equals("1")||restartInput.equals("2"))){
+        if(!(restartInput.equals(RESTART)||restartInput.equals(TERMINATE))){
             throw new IllegalArgumentException(INVALID_RESTART_OPTION.getMessage());
         }
     }
