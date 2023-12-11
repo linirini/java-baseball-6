@@ -1,7 +1,7 @@
 package baseball.view;
 
 public enum InputEnum {
-    ;
+    NUMBERS_INPUT("숫자를 입력해주세요 : ");
 
     private String message;
 
