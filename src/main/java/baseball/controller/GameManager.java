@@ -2,6 +2,7 @@ package baseball.controller;
 
 import static baseball.util.ExceptionEnum.NOT_NUMBER;
 
+import baseball.domain.GameResult;
 import baseball.domain.Numbers;
 import baseball.domain.RandomNumbersGenerator;
 import baseball.domain.Referee;
@@ -20,9 +21,18 @@ public class GameManager {
     public void run() {
         while (isRestart()) {
             startGame();
-            Numbers playerNumbers = inputPlayerNumbers();
+            Numbers computerNumbers = createComputerNumbers();
+            while(true) {
+                Numbers playerNumbers = inputPlayerNumbers();
+                GameResult gameResult = referee.determineGameResult(computerNumbers,playerNumbers);
+                outputView.printGameResult(gameResult);
+            }
             endGame();
         }
+    }
+
+    private Numbers createComputerNumbers() {
+        return new Numbers(numbersGenerator.createRandomNumbers());
     }
 
     public void startGame() {
