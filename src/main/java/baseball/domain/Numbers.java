@@ -2,6 +2,7 @@ package baseball.domain;
 
 import static baseball.util.ExceptionEnum.DUPLICATED_NUMBERS;
 import static baseball.util.ExceptionEnum.INVALID_NUMBER_LENGTH;
+import static baseball.util.ExceptionEnum.NOT_IN_RANGE;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +10,8 @@ import java.util.List;
 public class Numbers {
 
     private static final int SIZE = 3;
-    private static final int MAX_NUMBER = 9;
+    private static final int START_NUMBER = 1;
+    private static final int END_NUMBER = 9;
     private final List<Integer> numbers;
 
     public Numbers(List<Integer> numbers) {
@@ -20,6 +22,15 @@ public class Numbers {
     private void validate(List<Integer> numbers) {
         throwIfInvalidNumbersLength(numbers);
         throwIfDuplicatedNumbers(numbers);
+        throwIfInvalidNumberRange(numbers);
+    }
+
+    private void throwIfInvalidNumberRange(List<Integer> numbers) {
+        for (Integer number : numbers) {
+            if (number < START_NUMBER || number > END_NUMBER) {
+                throw new IllegalArgumentException(NOT_IN_RANGE.getMessage());
+            }
+        }
     }
 
     private void throwIfInvalidNumbersLength(List<Integer> numbers) {
@@ -44,7 +55,7 @@ public class Numbers {
 
     private List<Integer> initExistingNumberCount() {
         List<Integer> existingNumberCount = new ArrayList<>();
-        for (int i = 0; i <= MAX_NUMBER; i++) {
+        for (int i = 0; i <= END_NUMBER; i++) {
             existingNumberCount.add(0);
         }
         return existingNumberCount;
