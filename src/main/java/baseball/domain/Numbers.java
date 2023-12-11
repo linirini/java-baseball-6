@@ -1,10 +1,12 @@
 package baseball.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Numbers {
 
     private static final int SIZE = 3;
+    private static final int MAX_NUMBER = 9;
     private final List<Integer> numbers;
 
     public Numbers(List<Integer> numbers) {
@@ -13,7 +15,25 @@ public class Numbers {
     }
 
     private void validate(List<Integer> numbers) {
+        throwIfDuplicatedNumbers(numbers);
+    }
 
+    private void throwIfDuplicatedNumbers(List<Integer> numbers) {
+        List<Integer> existingNumberCount = initExistingNumberCount();
+        for (Integer number : numbers) {
+            if (existingNumberCount.get(number) != 0) {
+                throw new IllegalArgumentException();
+            }
+            existingNumberCount.set(number, existingNumberCount.get(number) + 1);
+        }
+    }
+
+    private List<Integer> initExistingNumberCount() {
+        List<Integer> existingNumberCount = new ArrayList<>();
+        for (int i = 0; i <= MAX_NUMBER; i++) {
+            existingNumberCount.add(0);
+        }
+        return existingNumberCount;
     }
 
     public List<Integer> getNumbers() {
