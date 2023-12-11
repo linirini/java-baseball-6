@@ -1,25 +1,25 @@
 # 🚀 기능 명세서
 
-- [ ] 게임 시작 안내
-  - [ ] "숫자 야구 게임을 시작합니다." 출력
-- [ ] 컴퓨터 숫자 생성
-  - [ ] 1에서 9까지 서로 다른 임의의 수 3개 선택
+- [ ] 게임 시작 안내 - GameManager#startGame
+  - [ ] "숫자 야구 게임을 시작합니다." 출력 - OutputView#printStartNotice
+- [ ] 컴퓨터 숫자 생성 - Numbers
+  - [ ] 1에서 9까지 서로 다른 임의의 수 3개 선택 - RandomNumbersGenerator
   - [ ] Random 추출은 라이브러리 사용
-- [ ] 숫자 입력
-  - [ ] "숫자를 입력해주세요 : " 출력
-  - [ ] 서로 다른 3자리 수 입력
-    - [ ] 입력이 숫자가 아닌 경우
-    - [ ] 중복된 숫자가 존재하는 경우
-    - [ ] 3자리 숫자가 아닌 경우
-- [ ] 입력한 수에 대한 결과 판별
-  - [ ] "n볼 n스트라이크" 또는 "낫싱" 또는 "3스트라이크" 출력
-    - [ ] (1) 컴퓨터 숫자와 사용자 입력 숫자 중 같은 숫자의 개수 구하기
-    - [ ] (2) 컴퓨터 숫자와 사용자 입력 숫자 중 같은 숫자이면서 같은 자리에 있는 숫자의 개수 구하기
+- [ ] 숫자 입력 - Numbers
+  - [ ] "숫자를 입력해주세요 : " 출력 - InputView#inputNumbers
+  - [ ] 서로 다른 3자리 수 입력 - Numbers#validate
+    - [ ] 입력이 숫자가 아닌 경우 GameManager#throwIfNotNumbers
+    - [ ] 중복된 숫자가 존재하는 경우 Numbers#throwIfDuplicatedNumbers
+    - [ ] 3자리 숫자가 아닌 경우 Numbers#throwIfInvalidNumbersLength
+- [ ] 입력한 수에 대한 결과 판별 - Referee
+  - [ ] "n볼 n스트라이크" 또는 "낫싱" 또는 "3스트라이크" 출력 - Referee#determineGameResult
+    - [ ] 볼, 스트라이크 개수 저장 - GameResult  
+    - [ ] (1) 컴퓨터 숫자와 사용자 입력 숫자 중 같은 숫자의 개수 구하기 - Numbers#countSameNumbers
+    - [ ] (2) 컴퓨터 숫자와 사용자 입력 숫자 중 같은 숫자이면서 같은 자리에 있는 숫자의 개수 구하기 - Numbers#countSameNumberOnSameIndex
     - [ ] 볼 = (2) - (1) 
-- [ ] 3개 숫자를 모두 맞힐 경우 게임 종료
-  - [ ] "3개의 숫자를 모두 맞히셨습니다! 게임 종료" 출력
+- [ ] 3개 숫자를 모두 맞힐 경우 게임 종료 - GameManager#endGame
+  - [ ] "3개의 숫자를 모두 맞히셨습니다! 게임 종료" 출력 - OutputView#printGameOverNotice
 - [ ] 게임 재시작 여부 판단
-  - [ ] "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요."
-  - [ ] 입력값이 1이면 재시작, 2면 종료
-    - [ ] 입력값이 숫자가 아닌 경우
-    - [ ] 입력값이 1 또는 2가 아닌 경우
+  - [ ] "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요." - InputView#inputGameRestart
+  - [ ] 입력값이 1이면 재시작, 2면 종료 - GameManager#isRestart
+    - [ ] 입력값이 1 또는 2가 아닌 경우 GameManager#throwIfInvalidRestartInput
