@@ -25,15 +25,19 @@ public class GameManager {
         while (isRestart()) {
             startGame();
             Numbers computerNumbers = createComputerNumbers();
-            while(true) {
-                Numbers playerNumbers = inputPlayerNumbers();
-                GameResult gameResult = referee.determineGameResult(computerNumbers,playerNumbers);
-                outputView.printGameResult(gameResult);
-                if(gameResult.isAllStrike()){
-                    break;
-                }
-            }
+            playGame(computerNumbers);
             endGame();
+        }
+    }
+
+    private void playGame(Numbers computerNumbers) {
+        while (true) {
+            Numbers playerNumbers = inputPlayerNumbers();
+            GameResult gameResult = referee.determineGameResult(computerNumbers, playerNumbers);
+            outputView.printGameResult(gameResult);
+            if (gameResult.isAllStrike()) {
+                break;
+            }
         }
     }
 
@@ -73,7 +77,7 @@ public class GameManager {
     }
 
     private void throwIfInvalidRestartOption(String restartInput) {
-        if(!(restartInput.equals(RESTART)||restartInput.equals(TERMINATE))){
+        if (!(restartInput.equals(RESTART) || restartInput.equals(TERMINATE))) {
             throw new IllegalArgumentException(INVALID_RESTART_OPTION.getMessage());
         }
     }
