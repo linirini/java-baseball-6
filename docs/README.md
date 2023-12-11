@@ -8,7 +8,7 @@
 - [ ] 숫자 입력 - Numbers
   - [x] "숫자를 입력해주세요 : " 출력 - InputView#inputNumbers
   - [x] 서로 다른 3자리 수 입력 - Numbers#validate
-    - [ ] 입력이 숫자가 아닌 경우 - GameManager#throwIfNotNumbers
+    - [x] 입력이 숫자가 아닌 경우 - GameManager#throwIfNotNumbers
     - [x] 중복된 숫자가 존재하는 경우 - Numbers#throwIfDuplicatedNumbers
     - [x] 3자리 숫자가 아닌 경우 - Numbers#throwIfInvalidNumbersLength
 - [x] 입력한 수에 대한 결과 판별 - Referee
