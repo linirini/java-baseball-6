@@ -1,7 +1,7 @@
 # 🚀 기능 명세서
 
 - [ ] 게임 시작 안내 - GameManager#startGame
-  - [ ] "숫자 야구 게임을 시작합니다." 출력 - OutputView#printGameStartNotice
+  - [x] "숫자 야구 게임을 시작합니다." 출력 - OutputView#printGameStartNotice
 - [ ] 컴퓨터 숫자 생성 - Numbers
   - [ ] 1에서 9까지 서로 다른 임의의 수 3개 선택 - RandomNumbersGenerator
   - [ ] Random 추출은 라이브러리 사용
@@ -14,7 +14,8 @@
 - [ ] 입력한 수에 대한 결과 판별 - Referee
   - [ ] "n볼 n스트라이크" 또는 "낫싱" 또는 "3스트라이크" 출력 - OutputView#printGameResult
   - [ ] 게임 결과 판별 - Referee#determineGameResult
-   - [ ] 볼, 스트라이크 개수 저장 - GameResult  
+   - [ ] 볼, 스트라이크 개수 저장 - GameResult
+     - [ ] 3스트라이크인 경우 - GameResult#isAllStrike
    - [ ] (1) 컴퓨터 숫자와 사용자 입력 숫자 중 같은 숫자의 개수 구하기 - Numbers#countSameNumbers
    - [ ] (2) 컴퓨터 숫자와 사용자 입력 숫자 중 같은 숫자이면서 같은 자리에 있는 숫자의 개수 구하기 - Numbers#countSameNumberOnSamePosition
    - [ ] 볼 = (2) - (1) 

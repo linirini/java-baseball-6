@@ -10,4 +10,16 @@ public class GameResult {
         this.strike = strike;
     }
 
+    public int getBall() {
+        return ball;
+    }
+
+    public int getStrike() {
+        return strike;
+    }
+
+    public boolean isAllStrike(){
+        return false;
+    }
+
 }
