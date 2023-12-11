@@ -22,11 +22,14 @@ public class GameManager {
     private final Referee referee = new Referee();
 
     public void run() {
-        while (isRestart()) {
+        while (true) {
             startGame();
             Numbers computerNumbers = createComputerNumbers();
             playGame(computerNumbers);
             endGame();
+            if(!isRestart()){
+                break;
+            }
         }
     }
 
