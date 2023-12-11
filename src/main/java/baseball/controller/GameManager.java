@@ -45,7 +45,7 @@ public class GameManager {
         return new Numbers(numbersGenerator.createRandomNumbers());
     }
 
-    public void startGame() {
+    private void startGame() {
         outputView.printGameStartNotice();
     }
 
@@ -66,11 +66,11 @@ public class GameManager {
         return numbers;
     }
 
-    public void endGame() {
+    private void endGame() {
         outputView.printGameOverNotice();
     }
 
-    public boolean isRestart() {
+    private boolean isRestart() {
         String restartInput = inputView.inputGameRestart();
         throwIfInvalidRestartOption(restartInput);
         return restartInput.equals(RESTART);

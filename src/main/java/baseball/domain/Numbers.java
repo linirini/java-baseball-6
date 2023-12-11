@@ -50,10 +50,6 @@ public class Numbers {
         return existingNumberCount;
     }
 
-    public List<Integer> getNumbers() {
-        return numbers;
-    }
-
     public int countSameNumbers(Numbers numbersToCompare) {
         int count = 0;
         for (Integer number : numbersToCompare.numbers) {
