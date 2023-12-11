@@ -20,7 +20,13 @@ public class Numbers {
     }
 
     public int countSameNumbers(Numbers numbersToCompare){
-        return -1;
+        int count = 0;
+        for (Integer number : numbersToCompare.numbers) {
+            if(numbers.contains(number)){
+                count++;
+            }
+        }
+        return count;
     }
 
     public int countSameNumberOnSamePosition(Numbers numbersToCompare){
