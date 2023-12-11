@@ -1,5 +1,7 @@
 package baseball.domain;
 
+import static baseball.util.ExceptionEnum.DUPLICATED_NUMBERS;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +24,7 @@ public class Numbers {
         List<Integer> existingNumberCount = initExistingNumberCount();
         for (Integer number : numbers) {
             if (existingNumberCount.get(number) != 0) {
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException(DUPLICATED_NUMBERS.getMessage());
             }
             existingNumberCount.set(number, existingNumberCount.get(number) + 1);
         }
