@@ -6,15 +6,16 @@ import static camp.nextstep.edu.missionutils.Console.readLine;
 
 public class InputView {
 
-    public String inputNumbers(){
+    public String inputNumbers() {
         System.out.print(NUMBERS_INPUT.getMessage());
         String input = readLine();
         return input;
     }
 
-    public String inputGameRestart(){
+    public String inputGameRestart() {
         System.out.println(GAME_RESTART.getMessage());
         String input = readLine();
         return input;
     }
+
 }
