@@ -1,10 +1,11 @@
 package baseball.controller;
 
+import static baseball.util.ExceptionEnum.NOT_NUMBER;
+
 import baseball.domain.Numbers;
 import baseball.domain.RandomNumbersGenerator;
 import baseball.domain.Referee;
 import baseball.view.InputView;
-import baseball.view.OutputEnum;
 import baseball.view.OutputView;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,15 @@ public class GameManager {
     private final RandomNumbersGenerator numbersGenerator = new RandomNumbersGenerator();
     private final Referee referee = new Referee();
 
-    public void run(){
-        while(isRestart()){
+    public void run() {
+        while (isRestart()) {
             startGame();
             Numbers playerNumbers = inputPlayerNumbers();
             endGame();
         }
     }
 
-    public void startGame(){
+    public void startGame() {
         outputView.printGameStartNotice();
     }
 
@@ -39,17 +40,17 @@ public class GameManager {
             for (String inputNumber : input.split("")) {
                 numbers.add(Integer.parseInt(inputNumber));
             }
-        }catch(NumberFormatException NFE){
-            throw new IllegalArgumentException();
+        } catch (NumberFormatException NFE) {
+            throw new IllegalArgumentException(NOT_NUMBER.getMessage());
         }
         return numbers;
     }
 
-    public void endGame(){
+    public void endGame() {
 
     }
 
-    public boolean isRestart(){
+    public boolean isRestart() {
         return false;
     }
 
