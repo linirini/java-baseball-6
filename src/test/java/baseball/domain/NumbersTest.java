@@ -14,5 +14,10 @@ public class NumbersTest {
         assertThatThrownBy(() ->new Numbers(List.of(1,1,3))).isInstanceOf(IllegalArgumentException.class);
     }
 
+    @DisplayName("3자리의 숫자가 아닌 경우 예외를 던진다.")
+    @Test
+    void invalid_numbers_length_exception(){
+        assertThatThrownBy(()->new Numbers(List.of(1,2,3,4))).isInstanceOf(IllegalArgumentException.class);
+    }
 
 }
