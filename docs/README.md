@@ -16,9 +16,9 @@
   - [x] 게임 결과 판별 - Referee#determineGameResult
    - [x] 볼, 스트라이크 개수 저장 - GameResult
      - [ ] 3스트라이크인 경우 - GameResult#isAllStrike
-   - [ ] (1) 컴퓨터 숫자와 사용자 입력 숫자 중 같은 숫자의 개수 구하기 - Numbers#countSameNumbers
-   - [ ] (2) 컴퓨터 숫자와 사용자 입력 숫자 중 같은 숫자이면서 같은 자리에 있는 숫자의 개수 구하기 - Numbers#countSameNumberOnSamePosition
-   - [ ] 볼 = (2) - (1) 
+   - [x] (1) 컴퓨터 숫자와 사용자 입력 숫자 중 같은 숫자의 개수 구하기 - Numbers#countSameNumbers
+   - [x] (2) 컴퓨터 숫자와 사용자 입력 숫자 중 같은 숫자이면서 같은 자리에 있는 숫자의 개수 구하기 - Numbers#countSameNumberOnSamePosition
+   - [x] 볼 = (2) - (1) 
 - [ ] 3개 숫자를 모두 맞힐 경우 게임 종료 - GameManager#endGame
   - [x] "3개의 숫자를 모두 맞히셨습니다! 게임 종료" 출력 - OutputView#printGameOverNotice
 - [ ] 게임 재시작 여부 판단
