@@ -44,6 +44,6 @@ public class OutputView {
     }
 
     public void printGameOverNotice(){
-
+        System.out.println(GAME_OVER.getMessage());
     }
 }
