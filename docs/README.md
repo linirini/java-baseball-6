@@ -11,7 +11,7 @@
   - [ ] 서로 다른 3자리 수 입력 - Numbers#validate
     - [ ] 입력이 숫자가 아닌 경우 - GameManager#throwIfNotNumbers
     - [x] 중복된 숫자가 존재하는 경우 - Numbers#throwIfDuplicatedNumbers
-    - [ ] 3자리 숫자가 아닌 경우 - Numbers#throwIfInvalidNumbersLength
+    - [x] 3자리 숫자가 아닌 경우 - Numbers#throwIfInvalidNumbersLength
 - [x] 입력한 수에 대한 결과 판별 - Referee
   - [x] "n볼 n스트라이크" 또는 "낫싱" 또는 "3스트라이크" 출력 - OutputView#printGameResult
   - [x] 게임 결과 판별 - Referee#determineGameResult

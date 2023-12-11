@@ -17,7 +17,18 @@ public class Numbers {
     }
 
     private void validate(List<Integer> numbers) {
+        throwIfInvalidNumbersLength(numbers);
         throwIfDuplicatedNumbers(numbers);
+    }
+
+    private void throwIfInvalidNumbersLength(List<Integer> numbers) {
+        if (isInvalidNumberLength(numbers)) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    private boolean isInvalidNumberLength(List<Integer> numbers) {
+        return numbers.size() != SIZE;
     }
 
     private void throwIfDuplicatedNumbers(List<Integer> numbers) {
