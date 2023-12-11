@@ -1,6 +1,7 @@
 package baseball.domain;
 
 import static baseball.util.ExceptionEnum.DUPLICATED_NUMBERS;
+import static baseball.util.ExceptionEnum.INVALID_NUMBER_LENGTH;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,7 @@ public class Numbers {
 
     private void throwIfInvalidNumbersLength(List<Integer> numbers) {
         if (isInvalidNumberLength(numbers)) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(INVALID_NUMBER_LENGTH.getMessage());
         }
     }
 
