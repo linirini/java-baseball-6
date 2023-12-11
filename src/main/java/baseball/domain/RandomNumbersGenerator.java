@@ -6,10 +6,13 @@ import java.util.List;
 
 public class RandomNumbersGenerator {
 
+    private static final int START_NUMBER = 1;
+    private static final int END_NUMBER = 9;
+
     public Numbers createRandomNumbers() {
         List<Integer> computerNumbers = new ArrayList<>();
         while (computerNumbers.size() < 3) {
-            int randomNumber = Randoms.pickNumberInRange(1, 9);
+            int randomNumber = Randoms.pickNumberInRange(START_NUMBER, END_NUMBER);
             if (!computerNumbers.contains(randomNumber)) {
                 computerNumbers.add(randomNumber);
             }

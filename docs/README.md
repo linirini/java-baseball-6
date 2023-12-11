@@ -4,11 +4,10 @@
   - [x] "숫자 야구 게임을 시작합니다." 출력 - OutputView#printGameStartNotice
 - [x] 컴퓨터 숫자 생성 - Numbers
   - [x] 1에서 9까지 서로 다른 임의의 수 3개 선택 - RandomNumbersGenerator#createRandomNumbers
-    - [ ] 범위 상수로 리팩터링
   - [x] Random 추출은 라이브러리 사용
 - [ ] 숫자 입력 - Numbers
   - [x] "숫자를 입력해주세요 : " 출력 - InputView#inputNumbers
-  - [ ] 서로 다른 3자리 수 입력 - Numbers#validate
+  - [x] 서로 다른 3자리 수 입력 - Numbers#validate
     - [ ] 입력이 숫자가 아닌 경우 - GameManager#throwIfNotNumbers
     - [x] 중복된 숫자가 존재하는 경우 - Numbers#throwIfDuplicatedNumbers
     - [x] 3자리 숫자가 아닌 경우 - Numbers#throwIfInvalidNumbersLength
