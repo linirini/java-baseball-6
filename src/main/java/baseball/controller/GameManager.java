@@ -27,7 +27,7 @@ public class GameManager {
             Numbers computerNumbers = createComputerNumbers();
             playGame(computerNumbers);
             endGame();
-            if(!isRestart()){
+            if (!isRestart()) {
                 break;
             }
         }
